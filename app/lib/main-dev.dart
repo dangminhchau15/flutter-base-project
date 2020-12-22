@@ -15,11 +15,5 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.light));
-  // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-  //     statusBarColor: Colors.white, statusBarBrightness: Brightness.light));
-  SystemChrome.setPreferredOrientations(
-          [DeviceOrientation.landscapeRight, DeviceOrientation.landscapeLeft])
-      .then((_) {
-     runApp(MyApp());
-  });
+  SystemChrome.setEnabledSystemUIOverlays([]).then((value) => runApp(MyApp()));
 }
