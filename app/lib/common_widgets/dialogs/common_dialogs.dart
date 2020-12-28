@@ -5,8 +5,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 typedef OnPressButtonOK();
 
-void showWarningMessage(
-    BuildContext context, String message, VoidCallback positiveTap) {
+void showWarningMessage(BuildContext context, String message, VoidCallback positiveTap) {
   showDialog(
       barrierColor: Colors.black.withOpacity(0.5),
       context: context,

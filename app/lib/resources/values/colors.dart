@@ -9,5 +9,6 @@ class AppColor {
   //common colorxs
   static const Color warning = Color(0xffffcc00);
   static const Color grey = Color(0xFF9e9e9e);
+  static const Color colorsBorderOutline = Color(0xffC4C4C4);
   static const Color black = Color(0xFF212121);
 }

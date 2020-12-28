@@ -7,8 +7,8 @@ enum Flavor { DEV, RELEASE }
 
 //Simple DI
 class Injector {
-  String baseUrlDev = "https://test-synthetic-news.vn";
-  String baseUrlRelease = "https://test-synthetic-news.vn";
+  String baseUrlDev = "http://178.128.23.104:4000/";
+  String baseUrlRelease = "http://178.128.23.104:4000/";
   static final Injector _singleton = Injector._internal();
   static Flavor _flavor;
 
