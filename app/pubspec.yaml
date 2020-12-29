@@ -36,10 +36,12 @@ dependencies:
   package_info: ^0.4.3+2
   url_launcher: ^5.7.10
   flutter_spinkit: ^3.1.0
+  flutter_hooks: ^0.15.0 
   fluttertoast: ^7.1.4
   shared_preferences: ^0.5.12+2
   path_provider: ^1.6.24
   event_bus: ^1.1.0
+  horizontal_data_table: ^1.0.9 
 
 dev_dependencies:
   flutter_test:

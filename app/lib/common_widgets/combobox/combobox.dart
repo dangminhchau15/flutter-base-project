@@ -1,10 +1,11 @@
 import 'package:app/resources/values/colors.dart';
 import 'package:app/resources/values/dimens.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
 typedef ChangeValue(String itemValue);
 
-class Combobox<T> extends StatefulWidget {
+class Combobox<T> extends HookWidget {
   final List<T> data;
   final Size size;
   final double width;
@@ -23,35 +24,8 @@ class Combobox<T> extends StatefulWidget {
       : super(key: key);
 
   @override
-  _ComboboxState createState() => _ComboboxState();
-}
-
-class _ComboboxState<T> extends State<Combobox> {
-  List<T> _data;
-  Size _size;
-  double _width;
-  T _itemValue;
-  BuildContext _context;
-  ChangeValue _changeValue;
-
-  @override
-  void initState() {
-    _initData();
-    super.initState();
-  }
-
-  void _initData() {
-    _data = widget.data;
-    _size = widget.size;
-    _width = widget.width;
-    _itemValue = widget.itemValue;
-    _context = widget.context;
-    _changeValue = widget.changeValue;
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return _combobox<T>(_data, _size, _width, _itemValue, _context, _changeValue);
+    return _combobox(data, size, width, itemValue, context, changeValue);
   }
 
   Widget _combobox<T>(List<T> data, Size size, double width, T itemValue,
