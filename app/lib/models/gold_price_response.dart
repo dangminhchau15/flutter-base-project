@@ -15,12 +15,12 @@ class GoldPriceResponse {
         this.success,
     });
 
-    List<Datum> data;
+    List<Gold> data;
     dynamic error;
     bool success;
 
     factory GoldPriceResponse.fromJson(Map<String, dynamic> json) => GoldPriceResponse(
-        data: json["data"] == null ? null : List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+        data: json["data"] == null ? null : List<Gold>.from(json["data"].map((x) => Gold.fromJson(x))),
         error: json["error"],
         success: json["success"] == null ? null : json["success"],
     );
@@ -32,8 +32,8 @@ class GoldPriceResponse {
     };
 }
 
-class Datum {
-    Datum({
+class Gold {
+    Gold({
         this.type,
         this.name,
         this.city,
@@ -53,7 +53,7 @@ class Datum {
     DateTime updatedAt;
     dynamic deletedAt;
 
-    factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+    factory Gold.fromJson(Map<String, dynamic> json) => Gold(
         type: json["Type"] == null ? null : typeValues.map[json["Type"]],
         name: json["Name"] == null ? null : json["Name"],
         city: json["City"] == null ? null : json["City"],

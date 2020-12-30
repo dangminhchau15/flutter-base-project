@@ -19,12 +19,12 @@ class RestClient {
     HttpHeaders.contentTypeHeader: "multipart/form-data"
   };
 
-  Future<dynamic> getAsync(String endPoint,
+  Future<NetworkServiceResponse<T>> getAsync<T>(String endPoint,
       [Map<String, dynamic> query]) async {
     try {
       final response = await _dioClient.get(baseUrl + endPoint,
           options: Options(headers: headers), queryParameters: query);
-      return response;
+      return processResponse<T>(response);
     } on DioError catch (e) {
       return _handleErrorDio(e);
     }

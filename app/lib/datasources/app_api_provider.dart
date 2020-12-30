@@ -6,12 +6,12 @@ import 'networks/rest_client.dart';
 class AppApiProvider extends NetworkService {
   AppApiProvider(RestClient rest) : super(rest);
   
-  Future<NetworkServiceResponse<GoldPriceResponse>> getGoldPrice() async {
+  Future<NetworkServiceResponse<List<Gold>>> getGoldPrice() async {
     var result = await rest.getAsync("api/v1/gold");
-    var data = GoldPriceResponse.fromJson(result);
+    var data = result.data.map<Gold>((f) => Gold.fromJson(f)).toList();
     return NetworkServiceResponse(
       data: data,
-      success: true
+      success: result.success
     );
   }
 }
